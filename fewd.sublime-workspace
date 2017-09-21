@@ -8,19 +8,11 @@
 	"buffers":
 	[
 		{
-			"file": "fewd.sublime-project",
-			"settings":
-			{
-				"buffer_size": 0,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "01/ga-press-release/index.html",
 			"settings":
 			{
-				"buffer_size": 121,
+				"buffer_size": 675,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -67,6 +59,8 @@
 	],
 	"file_history":
 	[
+		"/Users/nyoung/Documents/Sites/NathanYoung/fewd.sublime-project",
+		"/Users/nyoung/Documents/Sites/NathanYoung/fewd.sublime-workspace",
 		"/Users/nyoung/Documents/Sites/NathanYoung/01/ga-press-release/index.html",
 		"/Users/nyoung/Documents/GitHub/generalassembly/samplesite.css"
 	],
@@ -108,58 +102,31 @@
 			[
 				{
 					"buffer": 0,
-					"file": "fewd.sublime-project",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "01/ga-press-release/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 121,
+						"buffer_size": 675,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								121,
-								121
+								606,
+								606
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 18.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
