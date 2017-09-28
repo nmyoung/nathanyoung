@@ -6,6 +6,8 @@ Developer @GA in NYC
 */
 
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,600,800');
+
 /******************************************
 /* SETUP
 /*******************************************/
@@ -16,6 +18,7 @@ Developer @GA in NYC
      -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
      box-sizing: border-box; /* IE */
 }
+
 
 /* Clear fix hack */
 .clearfix:after {
@@ -49,9 +52,7 @@ body {
      color: #000;
      font-size: 12px;
      line-height: 1.4;
-     font-family: Helvetica, Arial, sans-serif;
-     background: url(../images/header_bg.jpg) no-repeat center top rgb(134,141,157);
-      background-size: cover;
+     font-family: Open Sans, Arial, sans-serif;
 }
 
 
@@ -68,11 +69,22 @@ body {
 }
 
 header {
-
+     background: url(../images/header_bg.jpg) no-repeat rgb(134,141,157);
+     background-size: cover;
+     height: 600px;
+     width: 100%;
 }
 
-footer {
 
+footer {
+  background-color: black;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  margin: auto;
+  padding-top: 40px;
+  padding-bottom: 25px;
 }
 
 /******************************************
@@ -80,5 +92,143 @@ footer {
 /*******************************************/
 
 
+h1 {
+  font-weight: 800;
+  font-size: 48px;
+  color: #fff;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 40px;
+}
+
+header {
+  padding-top: 30px;
+}
+
+header h1 {
+  margin-left: 70px;
+}
+
+header h2 {
+  font-size: 40px;
+  color: #fff;
+  padding-top: 60px;
+  padding-bottom: 50px;
+  text-align: center;
+  margin: auto;
+}
+
+
+header button {
+  font-family: 'Open Sans';
+  font-weight: 800;
+  font-size: 22px;
+  text-align: center;
+  border: 7px solid #f9e42e;
+  background-color: #f9e42e;
+  width: 200px;
+  margin: auto; 
+  display: block;
+
+}
+
+#benefits {
+  padding-top: 60px;
+  background-color: #f2f6f5;
+  color: #033048;
+  padding-left: 70px;
+  margin-right: 70px;
+  height: 430px;
+  width: 100%;
+  }  
+
+#benefits h2 {
+  font-size: 28px;
+  padding-bottom: 10px;
+}
+
+#benefits p {
+  font-weight: 300;
+  font-size: 18px;
+  padding-bottom: 20px;
+  max-width: 50%;
+}
+
+#benefits ul {
+  list-style-type: disc;
+}
+
+#benefits li {
+  font-weight: 300;
+  font-size: 18px;
+  margin-left: 60px;
+  line-height: 1.8;
+  max-width: 35%;
+}
+
+#quote {
+  background: url(../images/testimonial_bg.jpg) no-repeat rgb(134,141,157);
+  background-size: cover;
+  height: 290px;
+  width: 100%;
+  color: #fff;
+  margin: auto;
+  padding-bottom: 30px;
+}
+
+
+#quote p {
+  padding-top: 50px;
+  width: 55%;
+  font-weight: 300;
+  font-size: 26px;
+  font-style: italic;
+  text-align: center;
+  margin: auto;
+}
+
+#quote br {
+    content: "A" !important;
+    display: block !important;
+    margin-bottom: .5em !important;
+}
+
+#quote span {
+  font-weight: 600;
+  font-size: 26px;
+  font-style: normal;
+}
+
+#buttonbottom {
+  background-color: #f9e42e;
+  height: 80px;
+}
+
+#buttonbottom button {
+  font-family: 'Open Sans';
+  font-weight: 800;
+  font-size: 16px;
+  border: 7px solid #033048;
+  background-color: #033048;
+  color: #fff;
+  width: 200px;
+  margin: auto; 
+  display: block;
+  text-align: center;
+}
+
+#yellow {
+  background-color: black;
+}
+
+#yellow h1 {
+  color: #f9e42e;
+  text-align: center;
+  padding: 32px;
+  margin: auto;
+  font-size: 36px;
+}
 
 
