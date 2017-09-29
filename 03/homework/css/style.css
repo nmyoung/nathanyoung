@@ -76,17 +76,6 @@ header {
 }
 
 
-footer {
-  background-color: black;
-  font-size: 13px;
-  font-weight: 600;
-  color: #fff;
-  text-align: center;
-  margin: auto;
-  padding-top: 40px;
-  padding-bottom: 25px;
-}
-
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
@@ -226,9 +215,18 @@ header button {
 #yellow h1 {
   color: #f9e42e;
   text-align: center;
-  padding: 32px;
+  padding: 35px;
   margin: auto;
   font-size: 36px;
 }
 
+footer {
+  background-color: black;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  margin: auto;
+  padding-top: 40px;
+  padding-bottom: 25px;
 
