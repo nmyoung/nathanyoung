@@ -1,0 +1,52 @@
+header,
+section,
+aside,
+footer {
+	background-color: black;
+	min-height: 100px;
+}
+
+header {
+	margin-bottom: 15px;
+	height: 150px;
+}
+
+footer {
+	margin-top: 15px;
+	height: 150px;
+}
+
+.columns {
+	display: flex;
+	height: 300px;
+	margin-bottom: 15px;
+}
+
+aside.left {
+	width: 50%;
+	margin-right: .75%;
+}
+
+aside.right {
+	width: 50%;
+	margin-left: .75%;
+}
+
+.columns2 {
+	display: flex;
+	height: 200px;
+}
+
+aside.left2 {
+	width: 33%;
+	margin-right: 2%;
+}
+
+section {
+	width: 33%;
+}
+
+aside.right2 {
+	width: 33%;
+	margin-left: 2%;
+}

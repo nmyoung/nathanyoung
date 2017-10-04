@@ -1,10 +1,14 @@
+* {
+	box-sizing: border-box;
+}
+
 #twoColumn header, 
 #twoColumn footer, 
 #twoColumn aside, 
 #twoColumn section {
 	background-color: grey;
 	min-height: 100px;
-	/*border: 1px solid black;*/
+	border: 1px solid black;
 }
 
 #twoColumn header {
@@ -20,16 +24,17 @@
 	float: left;
 	width: 74%;
 	margin-right: 1%;
+	height: 500px;
 }
 
 #twoColumn aside {
 	width: 25%;
-	float: left;
+	margin-left: 75%;
 }
 
 #twoColumn .floats {
-	height: 1px;
-	min-height: 100px;
+	background-color: red;
+	overflow: hidden;
 }
 
 #twoColumn {
