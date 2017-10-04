@@ -103,10 +103,12 @@ header h1 {
 header h2 {
   font-size: 40px;
   color: #fff;
-  padding-top: 60px;
-  padding-bottom: 50px;
-  text-align: center;
+  padding: 60px 20px 50px;
   margin: auto;
+}
+
+header h2, header button, #buttonbottom button, #yellow h1, footer {
+  text-align: center;
 }
 
 
@@ -114,7 +116,6 @@ header button {
   font-family: 'Open Sans';
   font-weight: 800;
   font-size: 22px;
-  text-align: center;
   border: 7px solid #f9e42e;
   background-color: #f9e42e;
   width: 200px;
@@ -192,7 +193,7 @@ header button {
 
 #buttonbottom {
   background-color: #f9e42e;
-  height: 80px;
+  height: 75px;
 }
 
 #buttonbottom button {
@@ -214,19 +215,24 @@ header button {
 
 #yellow h1 {
   color: #f9e42e;
-  text-align: center;
   padding: 35px;
   margin: auto;
   font-size: 36px;
 }
+
+#yellow img {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px;
+  display: block;
+ }
 
 footer {
   background-color: black;
   font-size: 13px;
   font-weight: 600;
   color: #fff;
-  text-align: center;
   margin: auto;
   padding-top: 40px;
   padding-bottom: 25px;
-
+}
