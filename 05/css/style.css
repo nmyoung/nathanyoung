@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,600,800');
+
+/* */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Open Sans, Arial, sans-serif;
+  margin: auto;
+  width: 100%;
+  background-color: #f0efef;
+}
+
+
+header {
+  background-color: #033048;
+  height: 100px;
+}
+
+header h1 {
+  font-weight: 800;
+  font-size: 48px;
+  color: #fff;
+  margin-left: 75px;
+  padding-top: 15px;
+  float: left;
+}
+
+header nav {
+  color: white;
+  float: right;
+  margin-right: 75px;
+  padding-top: 6px;
+}
+
+header nav ul li {
+  float: left;
+  padding-right: 35px;
+  padding-top: 25px;
+}
+
+
+header nav ul li.noCaps {
+  font-weight: 600;
+  list-style: none;
+  font-size: 24px;
+  color: #f9e42e;
+}
+
+/****/
+
+#blog {
+  padding-top: 20px;
+  display: flex;
+  height: 1800px;
+  margin: 30px 75px;
+}
+
+#blog .content {
+  max-width: 700px;
+  float: left;
+  padding-right: 20px;
+}
+
+#blog .content h2 {
+  font-weight: 600;
+  font-size: 40px;
+  color: #033048;
+  line-height: 1.2;
+}
+
+#blog .content img {
+  padding: 12px 0;
+}
+
+#blog .content p {
+  font-size: 24px;
+  font-weight: 300;
+  color: #121212;
+}
+
+#blog .content span {
+  font-size: 24px;
+  font-weight: 600;
+  color: #033048;
+  float: right;
+}
+
+/****/
+
+#blog .sidebar {
+  max-width: 240px;
+  float: left;
+}
+
+#blog .sidebar h2 {
+  font-size: 32px;
+  font-weight: 900;
+  color: #033048;
+  padding-bottom: 5px;
+}
+
+#blog .sidebar ul {
+  padding-bottom: 50px;
+}
+
+#blog .sidebar ul li.categories {
+  font-weight: 300;
+  list-style: none;
+  font-size: 24px;
+  color: #033048;
+}
+
+#blog .sidebar p {
+  font-size: 22px;
+  font-weight: 300;
+  color: #033048;
+}
+
+#blog .sidebar p span {
+  font-weight: 900;
+}
+
+#blog .sidebar img {
+  padding-top: 50px;
+}
+
+/****/
+
+#buttonbottom {
+  background-color: #f9e42e;
+  height: 75px;
+}
+
+#buttonbottom button {
+  font-family: 'Open Sans';
+  font-weight: 800;
+  font-size: 16px;
+  border: 7px solid #033048;
+  background-color: #033048;
+  color: #fff;
+  width: 200px;
+  margin: auto; 
+  display: block;
+  text-align: center;
+}
+
+#yellow {
+  background-color: black;
+}
+
+#yellow h1 {
+  color: #f9e42e;
+  padding: 35px;
+  margin: auto;
+  text-align: center;
+  font-size: 36px;
+}
+
+#yellow img {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px;
+  display: block;
+ }
+
+footer {
+  background-color: black;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  margin: auto;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 25px;
+}
