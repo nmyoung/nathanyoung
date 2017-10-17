@@ -3,22 +3,20 @@ document.getElementsByClassName("readmore").onclick = readMore;
 
 /* Execute Code Here */
 
-function readMore() {
-	document.getElementById("show-this-on-click").style.visibility = "visible";
-	document.getElementsByClassName("readless").style.visibility = "visible";
-	document.getElementsByClassName("readmore").style.display = "hidden";
-}
-
 function readLess() {
-	document.getElementById("show-this-on-click").style.visibility = "hidden";
-	document.getElementsByClassName("readless").style.visibility = "hidden";
-	document.getElementsByClassName("readmore").style.visibility = "visible";
+	document.getElementById('show-this-on-click').style.display = "display";
+	document.getElementsByClassName('readless').style.display = "display";
+	document.getElementsByClassName('readmore').style.display = "none";
 }
 
-document.getElementById("show-this-on-click").addEventListener("click", function(readLess){
-    event.preventDefault()
-});
+function readMore() {
+	document.getElementById('show-this-on-click').style.display = "none";
+	document.getElementsByClassName('readless').style.display = "none";
+	document.getElementsByClassName('readmore').style.display = "display";
+}
 
-document.getElementById("show-this-on-click").addEventListener("click", function(readMore){
-    event.preventDefault()
-});
+
+var anchors = document.getElementsByTagName('a');
+for (i=0, len=anchors.length; i<len; i++){
+	anchors[i].addEventListener('click', function(e){e.preventDefault();});
+}
