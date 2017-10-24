@@ -9,19 +9,19 @@ $(document).ready(function() {
 });
 
 $('form').submit(function() {
-	if(city = 'Sydney') {
+	if(city = 'Sydney' || 'SYD') {
 	$('body').css("background-image", "url(images/sydney.jpg)");
 }
-	if(city = 'New York') {
+	else if(city = 'New York' || 'NYC' || 'New York City') {
 	$('body').css("background-image", "url(images/nyc.jpg)");
 }
-	if(city = 'San Francisco') {
+	else if(city = 'San Francisco' || 'SF' || 'Bay Area') {
 	$('body').css("background-image", "url(images/sf.jpg)");
 }
-	if(city = 'Los Angeles') {
+	else if(city = 'Los Angeles' || 'LA' || 'LAX') {
 	$('body').css("background-image", "url(images/la.jpg)");
 }
-	if(city = 'Austin') {
+	else(city = 'Austin' || 'ATX') {
 	$('body').css("background-image", "url(images/austin.jpg)");
 }
 
