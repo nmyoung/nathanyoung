@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-	var itemCount = 0;
-
 	//Submitted Form Event
 	$('#addTodoList').submit(addTodoListItem);
 	$('#clearList').click(emptyTodoList);
