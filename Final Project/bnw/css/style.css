@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Arimo:400, 700');
 
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    vertical-align: baseline;
-    box-sizing: border-box;
-     -moz-box-sizing: border-box;
-  	-webkit-box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 }
 
 html {
@@ -16,16 +16,16 @@ html {
 }
 
 body {
-    width: 100%;
+	width: 100%;
 	background-color: #141415;
 	transition: background-color 0.5s linear;
-    color: #eaeaea;
-    font-family: 'Arimo', 'sans-serif';
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.4;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+	font-family: 'Arimo', 'sans-serif';
+	font-weight: 400;
+	font-size: 1rem;
+	color: #eaeaea;
+	line-height: 1.55;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }
 
 ul {
@@ -46,33 +46,51 @@ img:hover, img:active {
 
 .anchor {
 	display: block;
+	padding-top: 55px;
+	margin-top: -55px;
+}
+
+@media (min-width: 768px) {
+.anchor {
 	padding-top: 100px;
 	margin-top: -100px;
+}
+}
+
+
+/* Prevent Highlighting */
+
+.no-select {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;     
 }
 
 
 /* Site Header */
 
 #site-header {
+	width: 100%;
 	position: fixed;
+	transition: all 0.3s ease;
 	background: #141415;
-	width: 100vw;
-	text-transform: uppercase;
 	font-size: 1rem;
 	color: #141415;
+	text-transform: uppercase;
 	top: 0;
 	z-index: 1000;
-	transition: all 0.3s ease;
+
 }
 
 #site-header .bnwBar {
-	padding: .70rem 0 calc(.72rem) 0;
+	padding: .70rem 0 .70rem 0;
 	float: left;
 	margin-left: 7vw;
 }
 
 #site-header .menuOuter {
-	padding: .70rem 0 calc(.72rem) 0;
+	padding: .70rem 0 .70rem 0;
 	float: right;
 	width: 50vw;
 	background-color: #eaeaea;
@@ -277,7 +295,6 @@ img:hover, img:active {
 
 #about .aboutBody p {
 	font-size: .85rem;
-	line-height: 1.6;
 	width: 65%;
 	margin: auto;
 	padding-top: 8px;
@@ -290,13 +307,13 @@ img:hover, img:active {
 	height: auto;
 }
 
-#about .aboutBody .aboutImages figure .image1 {
+#about .aboutBody .aboutImages figure .aboutImage1 {
 	margin-left: 6vw;
 	width: 60%;
 	margin-bottom: 40px;
 }
 
-#about .aboutBody .aboutImages figure .image2 {
+#about .aboutBody .aboutImages figure .aboutImage2 {
 	margin-left: 37.8vw;
 	margin-bottom: -.5rem;
 	width: 60%;
@@ -309,7 +326,7 @@ img:hover, img:active {
 #about .aboutBody .aboutImages figure .fig1 {
 	position: relative;
 	margin-left: calc(5.9vw + .5rem);
-	margin-top: -15px;
+	margin-top: -25px;
 }
 
 #about .aboutBody .aboutImages figure .fig2 {
@@ -386,22 +403,27 @@ img:hover, img:active {
 	margin-bottom: 7px;
 	padding-right: 1rem;
 	text-align: left;
-	color: #eaeaea;
+	color: #969696;
+	cursor: pointer;
 }
 
-#program .programDates .h3Hide {
-	color: #969696;
+#program .programDates .h3Active {
+	color: #eaeaea;
 }
 
 #program .programTimes {
 	width: 100%;
 	font-size: .55rem;
 	margin-top: 25px;
+	display: none;
+}
+
+#program .activeTimes {
+	display: inline-block;
 }
 
 #program .programTimes p {
 	font-size: .72rem;
-	line-height: 1.5;
 	width: 65%;
 	margin: auto;
 	margin-bottom: 13px;
@@ -421,18 +443,6 @@ img:hover, img:active {
 	position: absolute;
 	display: block;
 	margin-top: -1.07rem;
-}
-
-.wedTimes {
-	display: inline-block;
-}
-
-.thursTimes {
-	display: none;
-}
-
-.friTimes {
-	display: none;
 }
 
 
@@ -465,30 +475,35 @@ img:hover, img:active {
 	margin-top: 0;
 }
 
-#faq .faqBody h3 {
-	font-size: .6rem;
-	text-transform: uppercase;
-	margin-top: 20px;
-	margin-bottom: 2rem;
-	margin-left: 14.5vw;
-}
-
 #faq .faqBody .h3Active {
 	color: #eaeaea;
 }
 
-#faq .faqBody .h3Hide {
+#faq .faqBody h3 {
+	font-size: .6rem;
+	max-width: 60%;
+	text-transform: uppercase;
+	margin-top: 20px;
+	margin-bottom: 2rem;
+	margin-left: 14.5vw;
 	color: #969696;
+	cursor: pointer;
 }
 
 #faq .faqBody p {
 	font-size: .85rem;
-	line-height: 1.5;
 	width: 60%;
 	margin-left: 20%;
 	margin-top: calc(-2rem + 5px);
-	padding-top: 8px;
 	margin-bottom: 50px;
+	padding-top: 8px;
+	visibility: hidden;
+	height: 1rem;
+}
+
+#faq .faqBody .pActive {
+	visibility: visible;
+	height: auto;
 }
 
 #faq .faqBody p a {
@@ -499,11 +514,6 @@ img:hover, img:active {
 #faq .faqBody p a:hover,
 #faq .faqBody p a:active {
 	border-bottom: 1.25px solid #eaeaea;
-}
-
-#faq .faqBody .pHide {
-	visibility: hidden;
-	height: 1rem;
 }
 
 
@@ -539,7 +549,6 @@ img:hover, img:active {
 
 #tickets p {
 	font-size: .85rem;
-	line-height: 1.5;
 	width: 65%;
 	margin: auto;
 	margin-bottom: 2rem;
@@ -589,11 +598,9 @@ img:hover, img:active {
 	padding: .35rem 1.2rem;
 	text-transform: uppercase;
 	font-size: .75rem;
-}
-
-.ticketsText button a {
 	color: #413932;
 	text-decoration: none;
+	cursor: pointer;
 }
 
 
@@ -605,7 +612,7 @@ footer {
 	border-top: 3px solid #eaeaea;
 	background-color: #141415;
 	text-transform: uppercase;
-	padding-bottom: 1.9rem;
+	padding-bottom: 1.7rem;
 }
 
 .footerTitle {
@@ -615,7 +622,7 @@ footer {
 }
 
 .footerLinks {
-	margin-top: -2.85rem;
+	margin-top: -3rem;
 	font-size: .6rem;
 	margin-left: 75%;
 }
@@ -820,7 +827,7 @@ footer {
 }
 
 .footerLinks {
-	margin-top: -3.35rem;
+	margin-top: -3.6rem;
 	font-size: .85rem;
 	margin-left: 78%;
 }

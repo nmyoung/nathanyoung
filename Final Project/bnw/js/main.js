@@ -23,86 +23,23 @@ $('.nav').click(function() {
 
 //Program Dates
 
-$('.wed').click(function() {
-  $('.wed').addClass('h3Active').removeClass('h3Hide');
-  $('.thurs').addClass('h3Hide').removeClass('h3Active');
-  $('.fri').addClass('h3Hide').removeClass('h3Active');
-  $('.wedTimes').css('display', 'inline-block');
-  $('.thursTimes').css('display', 'none');
-  $('.friTimes').css('display', 'none');
-})
-
-$('.thurs').click(function() {
-  $('.wed').addClass('h3Hide').removeClass('h3Active');
-  $('.thurs').addClass('h3Active').removeClass('h3Hide');
-  $('.fri').addClass('h3Hide').removeClass('h3Active');
-  $('.wedTimes').css('display', 'none');
-  $('.thursTimes').css('display', 'inline-block');
-  $('.friTimes').css('display', 'none');
-})
-
-$('.fri').click(function() {
-  $('.wed').addClass('h3Hide').removeClass('h3Active');
-  $('.thurs').addClass('h3Hide').removeClass('h3Active');
-  $('.fri').addClass('h3Active').removeClass('h3Hide');
-  $('.wedTimes').css('display', 'none');
-  $('.thursTimes').css('display', 'none');
-  $('.friTimes').css('display', 'inline-block');
+$('.programDates h3').click(function() {
+  var time_class = "." + this.id + "Times";
+  $('.programDates h3').removeClass('h3Active');
+  $(this).addClass('h3Active');
+  $('.programTimes').removeClass('activeTimes');
+  $(time_class).addClass('activeTimes');
 });
 
 
-// FAQ Info
+//FAQ Info
 
-$('.question1').click(function() {
-  if($('.question1').hasClass('h3Hide')) {
-    $('.question1').addClass('h3Active').removeClass('h3Hide');
-    $('.answer1').addClass('pActive').removeClass('pHide');
-    $('.question2').addClass('h3Hide').removeClass('h3Active');
-    $('.answer2').addClass('pHide').removeClass('pActive');
-    $('.question3').addClass('h3Hide').removeClass('h3Active');
-    $('.answer3').addClass('pHide').removeClass('pActive');
-    $('.question4').addClass('h3Hide').removeClass('h3Active');
-    $('.answer4').addClass('pHide').removeClass('pActive');
-}
-})
-
-$('.question2').click(function() {
-  if($('.question2').hasClass('h3Hide')) {
-    $('.question2').addClass('h3Active').removeClass('h3Hide');
-    $('.answer2').addClass('pActive').removeClass('pHide');
-    $('.question1').addClass('h3Hide').removeClass('h3Active');
-    $('.answer1').addClass('pHide').removeClass('pActive');
-    $('.question3').addClass('h3Hide').removeClass('h3Active');
-    $('.answer3').addClass('pHide').removeClass('pActive');
-    $('.question4').addClass('h3Hide').removeClass('h3Active');
-    $('.answer4').addClass('pHide').removeClass('pActive');
-}
-})
-
-$('.question3').click(function() {
-  if($('.question3').hasClass('h3Hide')) {
-    $('.question3').addClass('h3Active').removeClass('h3Hide');
-    $('.answer3').addClass('pActive').removeClass('pHide');
-    $('.question1').addClass('h3Hide').removeClass('h3Active');
-    $('.answer1').addClass('pHide').removeClass('pActive');
-    $('.question2').addClass('h3Hide').removeClass('h3Active');
-    $('.answer2').addClass('pHide').removeClass('pActive');
-    $('.question4').addClass('h3Hide').removeClass('h3Active');
-    $('.answer4').addClass('pHide').removeClass('pActive');
-}
-})
-
-$('.question4').click(function() {
-  if($('.question4').hasClass('h3Hide')) {
-    $('.question4').addClass('h3Active').removeClass('h3Hide');
-    $('.answer4').addClass('pActive').removeClass('pHide');
-    $('.question1').addClass('h3Hide').removeClass('h3Active');
-    $('.answer1').addClass('pHide').removeClass('pActive');
-    $('.question2').addClass('h3Hide').removeClass('h3Active');
-    $('.answer2').addClass('pHide').removeClass('pActive');
-    $('.question3').addClass('h3Hide').removeClass('h3Active');
-    $('.answer3').addClass('pHide').removeClass('pActive');
-}
+$('.faqBody h3').click(function() {
+  var question_class = "." + this.id + "-answer";
+  $('.faqBody h3').removeClass('h3Active');
+  $(this).addClass('h3Active');
+  $('.faqBody p').removeClass('pActive');
+  $(question_class).addClass('pActive');
 });
 
 
@@ -110,11 +47,38 @@ $('.question4').click(function() {
 
 $(window).on("load",function() {
 	$(window).scroll(function() {
+
+    var header = $('#site-header').height(),
+        windowScroll = $(window).scrollTop(),
+        currentPos = header + windowScroll;
+    
+
+    $(".fade").each(function() {
+      var image = $(this).offset().top;
+      
+      if ((currentPos + 300) > image) {
+        if ($(this).css("opacity")==0) {$(this).fadeTo(150,1);
+        }
+      } else {
+        if ($(this).css("opacity")==1) {$(this).fadeTo(150,0);
+        }
+      }
+            
+    });
+
+/*
 		
     var windowBottom = $(this).scrollTop() + $(this).innerHeight();
 
 		$(".fade").each(function() {
       var objectBottom = $(this).offset().top + $(this).outerHeight();
+
+      if ($(this).find('img').hasClass('aboutImage1')) {
+        console.log(this);
+        console.log(objectBottom);
+        console.log(windowBottom);
+      }
+      
       
 
       if (objectBottom < windowBottom) {
@@ -126,7 +90,7 @@ $(window).on("load",function() {
         if ($(this).css("opacity")==1) {$(this).fadeTo(150,0);
         }
       }
-    });
+    });*/
 
   }).scroll();
 
@@ -171,7 +135,8 @@ var waypoint2 = new Waypoint({
         $('body').css('background-color', '#273328');
       }
 
-    }
+    },
+    offset: '33%'
   })
 
 var waypoint3 = new Waypoint({
@@ -217,8 +182,7 @@ var waypoint4 = new Waypoint({
 
 //Smooth Scroll
 
-
-$('a').on('click', function(event) {
+$('a').on('click', function() {
 
     if (this.hash !== "") {
 
@@ -235,7 +199,7 @@ $('a').on('click', function(event) {
     }
   });
 
-$('.bnw').on('click', function(e){
+$('.bnw').on('click', function(){
     $('html, body').animate({scrollTop: $('#top').offset().top}, 1300);
 
 });
