@@ -1,129 +1,209 @@
 $(document).ready(function(){
 
-$('.menuOuter').click(function() {
-	if($('.navBar').css('display') === 'none')
-	{$('.navBar').css('display', 'inline-block');
-	 $('.menuOuter').css('margin-bottom', '3px');
-	}
 
-	else if($('.navBar').css('display') === 'inline-block')
-	{$('.navBar').css('display', 'none');
-	 $('.menuOuter').css('margin-bottom', '0px');
-	}
+//Mobile Menu
+
+$('.menuOuter').click(function() {
+	if($('.navBar').css('display') === 'none') {
+	  $('.navBar').css('display', 'inline-block');
+	  $('.menuOuter').css('margin-bottom', '3px');
+}
+
+	else if($('.navBar').css('display') === 'inline-block') {
+	  $('.navBar').css('display', 'none');
+	  $('.menuOuter').css('margin-bottom', '0px');
+}
+
+$('.nav').click(function() {
+  $('.navBar').css('display', 'none');
+})
 
 });
 
-$(window).scroll(function() {
-  
-  // selectors
-  var $window = $(window),
-      $body = $('body'),
-      $panel = $('.js-color');
-  
-  // Change 33% earlier than scroll position so colour is there when you arrive.
-  var scroll = $window.scrollTop() + ($window.height() / 1);
- 
-  $panel.each(function () {
-    var $this = $(this);
-    
-    if ($this.position().top <= scroll && $this.position().top + $this.height() > scroll) {
-          
-      $body.removeClass(function (index, css) {
-        return (css.match (/(^|\s)color-\S+/g) || []).join(' ');
-      });
-       
-      $body.addClass('color-' + $(this).data('color'));
-    }
-  });    
-  
-}).scroll();
 
+//Program Dates
+
+$('.programDates h3').click(function() {
+  var time_class = "." + this.id + "Times";
+  $('.programDates h3').removeClass('h3Active');
+  $(this).addClass('h3Active');
+  $('.programTimes').removeClass('activeTimes');
+  $(time_class).addClass('activeTimes');
+});
+
+
+//FAQ Info
+
+$('.faqBody h3').click(function() {
+  var question_class = "." + this.id + "-answer";
+  $('.faqBody h3').removeClass('h3Active');
+  $(this).addClass('h3Active');
+  $('.faqBody p').removeClass('pActive');
+  $(question_class).addClass('pActive');
+});
+
+
+//Image Fade
 
 $(window).on("load",function() {
 	$(window).scroll(function() {
-		var windowBottom = $(this).scrollTop() + $(this).innerHeight();
-		$(".fade").each(function() {
-      /* Check the location of each desired element */
-      var objectBottom = $(this).offset().top + $(this).outerHeight();
+
+    var header = $('#site-header').height(),
+        windowScroll = $(window).scrollTop(),
+        currentPos = header + windowScroll;
+    
+
+    $(".fade").each(function() {
+      var image = $(this).offset().top;
       
-      /* If the element is completely within bounds of the window, fade it in */
-      if (objectBottom < windowBottom) { //object comes into view (scrolling down)
-        if ($(this).css("opacity")==0) {$(this).fadeTo(150,1);}
-      } else { //object goes out of view (scrolling up)
-        if ($(this).css("opacity")==1) {$(this).fadeTo(150,0);}
+      if ((currentPos + 300) > image) {
+        if ($(this).css("opacity")==0) {$(this).fadeTo(150,1);
+        }
+      } else {
+        if ($(this).css("opacity")==1) {$(this).fadeTo(150,0);
+        }
       }
+            
     });
-  }).scroll(); //invoke scroll-handler on page-load
+
+/*
+		
+    var windowBottom = $(this).scrollTop() + $(this).innerHeight();
+
+		$(".fade").each(function() {
+      var objectBottom = $(this).offset().top + $(this).outerHeight();
+
+      if ($(this).find('img').hasClass('aboutImage1')) {
+        console.log(this);
+        console.log(objectBottom);
+        console.log(windowBottom);
+      }
+      
+      
+
+      if (objectBottom < windowBottom) {
+        if ($(this).css("opacity")==0) {$(this).fadeTo(150,1);
+        }
+      } 
+
+      else {
+        if ($(this).css("opacity")==1) {$(this).fadeTo(150,0);
+        }
+      }
+    });*/
+
+  }).scroll();
+
 });
 
 
- var waypoint = new Waypoint({
-		element: document.getElementById('about'),
+//Waypoint Backgrounds
+
+var waypoint = new Waypoint({
+	element: document.getElementById('about'),
 		handler: function(direction) {
-			if(direction=== 'down'){
+			if(direction === 'down'){
         $('#site-header').css('background-color', '#273328');
 				$('#site-header .navBar .navContent .nav li a').css('color', '#273328');
         $('#site-header .menuOuter .menu').css('color', '#273328');
+        $('body').css('background-color', '#273328');
 			}
 			else if(direction === 'up'){
 				$('#site-header').css('background-color', '#141415');
         $('#site-header .navBar .navContent .nav li a').css('color', '#141415');
         $('#site-header .menuOuter .menu').css('color', '#141415');
+        $('body').css('background-color', '#141415');
 			}
 
-		}
+		},
+    offset: '33%'
 	})
 
-  var waypoint2 = new Waypoint({
-    element: document.getElementById('program'),
+var waypoint2 = new Waypoint({
+  element: document.getElementById('program'),
     handler: function(direction) {
-      if(direction=== 'down'){
-        $('#site-header').css('background-color', '#332827');
-        $('#site-header .navBar .navContent .nav li a').css('color', '#332827');
-        $('#site-header .menuOuter .menu').css('color', '#332827');
+      if(direction === 'down'){
+        $('#site-header').css('background-color', '#34282F');
+        $('#site-header .navBar .navContent .nav li a').css('color', '#34282F');
+        $('#site-header .menuOuter .menu').css('color', '#34282F');
+        $('body').css('background-color', '#34282F');
       }
       else if(direction === 'up'){
         $('#site-header').css('background-color', '#273328');
         $('#site-header .navBar .navContent .nav li a').css('color', '#273328');
         $('#site-header .menuOuter .menu').css('color', '#273328');
+        $('body').css('background-color', '#273328');
       }
 
-    }
+    },
+    offset: '33%'
   })
 
-  var waypoint3 = new Waypoint({
-    element: document.getElementById('gallery'),
+var waypoint3 = new Waypoint({
+  element: document.getElementById('faq'),
     handler: function(direction) {
-      if(direction=== 'down'){
-        $('#site-header').css('background-color', '#332827');
-        $('#site-header .navBar .navContent .nav li a').css('color', '#332827');
-        $('#site-header .menuOuter .menu').css('color', '#332827');
-      }
-      else if(direction === 'up'){
-        $('#site-header').css('background-color', '#332827');
-        $('#site-header .navBar .navContent .nav li a').css('color', '#332827');
-        $('#site-header .menuOuter .menu').css('color', '#332827');
-      }
-
-    }
-  })
-
-  var waypoint4 = new Waypoint({
-    element: document.getElementById('faq'),
-    handler: function(direction) {
-      if(direction=== 'down'){
+      if(direction === 'down'){
         $('#site-header').css('background-color', '#272833');
         $('#site-header .navBar .navContent .nav li a').css('color', '#272833');
         $('#site-header .menuOuter .menu').css('color', '#272833');
+        $('body').css('background-color', '#272833');
       }
       else if(direction === 'up'){
-        $('#site-header').css('background-color', '#332827');
-        $('#site-header .navBar .navContent .nav li a').css('color', '#332827');
-        $('#site-header .menuOuter .menu').css('color', '#332827');
+        $('#site-header').css('background-color', '#34282F');
+        $('#site-header .navBar .navContent .nav li a').css('color', '#34282F');
+        $('#site-header .menuOuter .menu').css('color', '#34282F');
+        $('body').css('background-color', '#34282F');
       }
 
-    }
+    },
+    offset: '33%'
+  })
+
+var waypoint4 = new Waypoint({
+  element: document.getElementById('tickets'),
+    handler: function(direction) {
+      if(direction === 'down'){
+        $('#site-header').css('background-color', '#413932');
+        $('#site-header .navBar .navContent .nav li a').css('color', '#413932');
+        $('#site-header .menuOuter .menu').css('color', '#413932');
+        $('body').css('background-color', '#413932');
+      }
+      else if(direction === 'up'){
+        $('#site-header').css('background-color', '#272833');
+        $('#site-header .navBar .navContent .nav li a').css('color', '#272833');
+        $('#site-header .menuOuter .menu').css('color', '#272833');
+        $('body').css('background-color', '#272833');
+      }
+
+    },
+    offset: '33%'
   })
 
 
+//Smooth Scroll
+
+$('a').on('click', function() {
+
+    if (this.hash !== "") {
+
+      event.preventDefault();
+
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 1300, function(){
+
+        window.location.hash = hash;
+      });
+    }
+  });
+
+$('.bnw').on('click', function(){
+    $('html, body').animate({scrollTop: $('#top').offset().top}, 1300);
+
 });
+
+
+});
+

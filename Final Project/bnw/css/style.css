@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Arimo:400, 700');
 
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 }
 
 html {
@@ -15,17 +16,16 @@ html {
 }
 
 body {
-    margin: 0;
-    width: 100%;
+	width: 100%;
 	background-color: #141415;
 	transition: background-color 0.5s linear;
-    color: #eaeaea;
-    font-family: 'Arimo', 'sans-serif';
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.4;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+	font-family: 'Arimo', 'sans-serif';
+	font-weight: 400;
+	font-size: 1rem;
+	color: #eaeaea;
+	line-height: 1.55;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }
 
 ul {
@@ -37,58 +37,60 @@ img {
     transition: filter 300ms; 
 }
 
-img:hover {
+img:hover, img:active {
 	filter: none;
 }
 
 
-/* Colors */
-
-.color-black {
- 	background-color: #141515;
-}
-.color-green {
-	background-color: #273328;
-}
-.color-red {
-	background-color: #332827;
-}
-.color-blue {
-	background-color: #272833;
-}
-.color-yellow {
-	background-color: #333227;
-}
-
+/* Header Jump Fix */
 
 .anchor {
-	display:block;
-	padding-top:100px;
-	margin-top:-100px;
+	display: block;
+	padding-top: 55px;
+	margin-top: -55px;
 }
+
+@media (min-width: 768px) {
+.anchor {
+	padding-top: 100px;
+	margin-top: -100px;
+}
+}
+
+
+/* Prevent Highlighting */
+
+.no-select {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;     
+}
+
 
 /* Site Header */
 
 #site-header {
+	width: 100%;
 	position: fixed;
+	transition: all 0.3s ease;
 	background: #141415;
-	width: 100vw;
-	text-transform: uppercase;
 	font-size: 1rem;
 	color: #141415;
+	text-transform: uppercase;
 	top: 0;
 	z-index: 1000;
-	transition: all 0.3s ease;
+
 }
 
 #site-header .bnwBar {
-	padding: .70rem 0 calc(.72rem) 0;
+	padding: .70rem 0 .70rem 0;
 	float: left;
 	margin-left: 7vw;
 }
 
 #site-header .menuOuter {
-	padding: .70rem 0 calc(.72rem) 0;
+	padding: .70rem 0 .70rem 0;
 	float: right;
 	width: 50vw;
 	background-color: #eaeaea;
@@ -119,6 +121,7 @@ img:hover {
 	border-bottom: none;
 }
 
+
 #site-header .navBar .navContent {
 	margin: 0 4px;
 	padding: .48rem 0 calc(.57rem - 3px) 0;
@@ -145,7 +148,8 @@ img:hover {
 	color: #141415;
 }
 
-#site-header .navBar .navContent ul li a:hover {
+#site-header .navBar .navContent ul li a:hover,
+#site-header .navBar .navContent ul li a:active {
 	border-bottom: 1.25px solid #141415;
 }
 
@@ -249,11 +253,11 @@ img:hover {
 	margin: auto;
 	text-align: center;
 	max-width: 60%;
-	padding-top: calc(45vh + 2vw);
+	padding-top: calc(49vh + 2vw);
 }
 
 #cover-pic .coverInfo h3 {
-	font-size: .9rem;
+	font-size: .94rem;
 }
 
 
@@ -261,12 +265,12 @@ img:hover {
 
 #about {
 	height: 100%;
+	margin-bottom: 80px;
 }
 
 #about .aboutTitle {
 	width: 100%;
-	margin-top: 2.25rem;
-	position: relative;
+	margin-top: 80px;
 }
 
 #about .aboutTitle h2 {
@@ -277,44 +281,40 @@ img:hover {
 
 #about .aboutBody {
 	width: 100%;
-	position: absolute;
 	margin-top: 0;
-	padding-bottom: 2rem;
+	padding-bottom: 0;
 }
 
 #about .aboutBody h3 {
 	font-size: .6rem;
 	text-transform: uppercase;
-	margin-top: 15px;
+	margin-top: 20px;
 	margin-bottom: 7px;
 	margin-left: 14.5vw;
 }
 
 #about .aboutBody p {
 	font-size: .85rem;
-	line-height: 1.5;
 	width: 65%;
 	margin: auto;
-	position: relative;
 	padding-top: 8px;
-	margin-bottom: 2rem;
 }
 
 #about .aboutBody .aboutImages {
 	padding-right: 6.1%;
-	margin-top: -.6rem;
-	margin-bottom: 2rem;
+	margin-top: 100px;
+	margin-bottom: 100px;
 	height: auto;
 }
 
-#about .aboutBody .aboutImages figure .image1 {
+#about .aboutBody .aboutImages figure .aboutImage1 {
 	margin-left: 6vw;
 	width: 60%;
-	padding-bottom: .92rem;
+	margin-bottom: 40px;
 }
 
-#about .aboutBody .aboutImages figure .image2 {
-	margin-left: 37.9vw;
+#about .aboutBody .aboutImages figure .aboutImage2 {
+	margin-left: 37.8vw;
 	margin-bottom: -.5rem;
 	width: 60%;
 }
@@ -326,18 +326,18 @@ img:hover {
 #about .aboutBody .aboutImages figure .fig1 {
 	position: relative;
 	margin-left: calc(5.9vw + .5rem);
-	margin-top: -15px;
+	margin-top: -25px;
 }
 
 #about .aboutBody .aboutImages figure .fig2 {
 	transform: rotate(-90deg);
 	position: absolute;
 	transform-origin: top left;
-	margin-left: calc(38vw - 1.2rem);
+	margin-left: calc(38vw - 1.25rem);
 }
 
 #about .aboutBody .aboutLinks {
-	margin-top: 2rem;
+	margin-top: 2.25rem;
 }
 
 #about .aboutBody .aboutLinks p {
@@ -358,7 +358,8 @@ img:hover {
 	margin-left: .8vw;
 }
 
-#about .aboutBody .aboutLinks p a:hover {
+#about .aboutBody .aboutLinks p a:hover,
+#about .aboutBody .aboutLinks p a:active {
 	border-bottom: 1.25px solid #eaeaea;
 }
 
@@ -372,69 +373,57 @@ img:hover {
 
 }
 
-#about .aboutMargin {
-	margin-bottom: 77rem;
-}
-
-@media (min-width: 460px) {
-	#about .aboutMargin {
-		margin-bottom: 72rem;
-}
-}
-
-@media (min-width: 650px) {
-	#about .aboutMargin {
-		margin-bottom: 71rem;
-}
-}
-
-@media (min-width: 1000px) {
-	#about .aboutMargin {
-		margin-bottom: 72rem;
-}
-}
-
 
 /* Program Section */
 
 #program {
 	height: 100%;
-	position: relative;
-	margin-top: -4rem;
 }
 
 #program .programTitle {
 	width: 100%;
-	margin-top: 2.25rem;
-	margin-bottom: .8rem;
+	margin-top: 80px;
+}
+
+#program .programTitle h2 {
+	height: 100%;
 	text-align: center;
-	position: relative;
+	margin: auto;
 }
 
 #program .programDates {
 	margin-left: 14.5vw;
-	margin-top: 15px;
 }
 
 #program .programDates h3 {
 	display: inline-block;
 	font-size: .6rem;
 	text-transform: uppercase;
+	margin-top: 20px;
 	margin-bottom: 7px;
 	padding-right: 1rem;
 	text-align: left;
+	color: #969696;
+	cursor: pointer;
+}
+
+#program .programDates .h3Active {
+	color: #eaeaea;
 }
 
 #program .programTimes {
 	width: 100%;
-	position: absolute;
 	font-size: .55rem;
 	margin-top: 25px;
+	display: none;
+}
+
+#program .activeTimes {
+	display: inline-block;
 }
 
 #program .programTimes p {
 	font-size: .72rem;
-	line-height: 1.5;
 	width: 65%;
 	margin: auto;
 	margin-bottom: 13px;
@@ -456,37 +445,10 @@ img:hover {
 	margin-top: -1.07rem;
 }
 
-.Wednesday {
-	display: none;
-}
-
-.Thursday {
-	display: none;
-}
-
-.Friday {
-	display: inline-block;
-}
-
-#program .programMargin {
-	margin-bottom: 30rem;
-}
-
-@media (min-width: 460px) {
-	#program .programMargin {
-		margin-bottom: 35rem;
-}
-}
-
-@media (min-width: 1000px) {
-	#program .programMargin {
-		margin-bottom: 26.5rem;
-}
-}
-
 
 /* Gallery */
-#gallery .galleryImages {
+
+.galleryImages {
 	display: none;
 }
 
@@ -495,32 +457,11 @@ img:hover {
 
 #faq {
 	height: 100%;
-	margin-bottom: 77rem;
-}
-
-
-@media (min-width: 460px) {
-	#faq {
-		margin-bottom: 72rem;
-}
-}
-
-@media (min-width: 650px) {
-	#faq {
-		margin-bottom: 71rem;
-}
-}
-
-@media (min-width: 1000px) {
-	#faq {
-		margin-bottom: 50rem;
-}
 }
 
 #faq .faqTitle {
 	width: 100%;
-	margin-top: 2.25rem;
-	position: relative;
+	margin-top: 80px;
 }
 
 #faq .faqTitle h2 {
@@ -531,45 +472,50 @@ img:hover {
 
 #faq .faqBody {
 	width: 100%;
-	position: absolute;
 	margin-top: 0;
-	padding-bottom: 2rem;
-}
-
-#faq .faqBody h3 {
-	font-size: .6rem;
-	text-transform: uppercase;
-	margin-top: 15px;
-	margin-bottom: 2rem;
-	margin-left: 16.7vw;
 }
 
 #faq .faqBody .h3Active {
 	color: #eaeaea;
 }
 
-#faq .faqBody .h3Hide {
-	color: #adadad;
+#faq .faqBody h3 {
+	font-size: .6rem;
+	max-width: 60%;
+	text-transform: uppercase;
+	margin-top: 20px;
+	margin-bottom: 2rem;
+	margin-left: 14.5vw;
+	color: #969696;
+	cursor: pointer;
 }
 
 #faq .faqBody p {
 	font-size: .85rem;
-	line-height: 1.5;
 	width: 60%;
 	margin-left: 20%;
-	position: relative;
 	margin-top: calc(-2rem + 5px);
+	margin-bottom: 50px;
 	padding-top: 8px;
-	margin-bottom: 2rem;
+	visibility: hidden;
+	height: 1rem;
 }
 
-#faq .faqBody .pHide {
-	display: none;
+#faq .faqBody .pActive {
+	visibility: visible;
+	height: auto;
 }
 
-#faq .faqMargin {
-
+#faq .faqBody p a {
+	color: #eaeaea;
+	text-decoration: none;
 }
+
+#faq .faqBody p a:hover,
+#faq .faqBody p a:active {
+	border-bottom: 1.25px solid #eaeaea;
+}
+
 
 /* Tickets */
 
@@ -579,11 +525,10 @@ img:hover {
 
 #tickets .ticketsTitle {
 	width: 100%;
-	margin-top: 2.25rem;
-	position: relative;
+	margin-top: 80px;
 }
 
-#tickets .ticketsTitle h2 {
+#tickets h2 {
 	height: 100%;
 	text-align: center;
 	margin: auto;
@@ -591,27 +536,132 @@ img:hover {
 
 #tickets .ticketsBody {
 	width: 100%;
-	position: absolute;
 	margin-top: 0;
 	padding-bottom: 2rem;
 }
 
-#tickets .ticketsBody h3 {
+#tickets h3 {
 	font-size: .6rem;
 	text-transform: uppercase;
-	margin-top: 15px;
-	margin-bottom: 2rem;
-	margin-left: 16.7vw;
+	margin-top: 20px;
+	margin-left: 14.5vw;
 }
 
-#tickets .ticketsBody p {
+#tickets p {
 	font-size: .85rem;
-	line-height: 1.5;
-	width: 60%;
-	margin-left: 20%;
-	position: relative;
-	padding-top: 8px;
+	width: 65%;
+	margin: auto;
 	margin-bottom: 2rem;
+}
+
+#tickets .ticketsPrices {
+	text-transform: uppercase;
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+#tickets .ticketsPrices p {
+	margin-bottom: 0;
+}
+
+#tickets .ticketsPrices span {
+	padding-left: 14vw;
+	position: absolute;
+	display: block;
+	margin-top: -1.28rem;
+}
+
+.ticketsEmail {
+	font-size: .55rem;
+	margin-left: 17.6%;
+	padding-top: 15px;
+	margin-bottom: 30px;
+}
+
+.ticketsEmail a {
+	text-decoration: none;
+	color: #eaeaea;
+}
+
+.ticketsEmail a:hover,
+.ticketsEmail a:active {
+	border-bottom: 1.25px solid #eaeaea;
+}
+
+.ticketsText {
+	padding-top: 15px;
+}
+
+.ticketsText button {
+	margin-left: 17.6%;
+	background-color: #eaeaea;
+	padding: .35rem 1.2rem;
+	text-transform: uppercase;
+	font-size: .75rem;
+	color: #413932;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+/* Footer */
+
+footer {
+	height: 100%;
+	margin-top: 1.9rem;
+	border-top: 3px solid #eaeaea;
+	background-color: #141415;
+	text-transform: uppercase;
+	padding-bottom: 1.7rem;
+}
+
+.footerTitle {
+	margin-top: 1rem;
+	margin-left: 7%;
+	font-size: 2.5rem;
+}
+
+.footerLinks {
+	margin-top: -3rem;
+	font-size: .6rem;
+	margin-left: 75%;
+}
+
+.footerLinks a {
+	color: #eaeaea;
+	text-decoration: none;
+}
+
+.footerLinks a:hover,
+.ticketsEmail a:active {
+	border-bottom: 1.25px solid #eaeaea;
+}
+
+.footerRights {
+	margin-left: 7%;
+	font-size: .44rem;
+	margin-top: -.55rem;
+}
+
+
+/* Landscape phones */
+
+@media (min-width: 576px) {
+
+#footer .footerTitle {
+	font-size: 2.8rem;
+}
+
+#footer .footerLinks {
+	margin-left: 76%;
+	font-size: 1rem;
+}
+
+.footerRights {
+	font-size: .5rem;
+	margin-top: -.15rem;
+}
+
 }
 
 
@@ -662,7 +712,6 @@ img:hover {
 
 
 /* Cover Picture */
-
 
 #cover-pic .coverCenter {
 	top: 47%;
@@ -716,73 +765,86 @@ img:hover {
 }
 
 
-
-
-
 /* Program */
 
 #program .programDates {
 	margin-left: 14.2vw;
 }
 
+
 /* Gallery */
 
-#gallery .galleryImages {
+.galleryImages {
 	display: block;
 	padding-right: 6.1%;
-	margin-top: -1rem;
-	padding-bottom: 6rem;
+	margin-top: 100px;
+	padding-bottom: 50px;
 	height: auto;
 	position: relative;
 }
 
-#gallery .galleryImages .image1 {
+.galleryImages .image1 {
 	margin-left: 50vw;
 	width: 48%;
 }
 
-#gallery .galleryImages .image2 {
+.galleryImages .image2 {
 	margin-left: 5.3vw;
 	width: 30%;
 	margin-top: -30px;
 }
 
-#gallery .galleryImages .image3 {
+.galleryImages .image3 {
 	margin-left: 41.5vw;
 	width: 46%;
 	margin-top: -48px;
 }
 
-#gallery .galleryImages .image4 {
+.galleryImages .image4 {
 	margin-left: 18vw;
 	width: 25%;
 	margin-top: 90px;
 }
 
-#gallery .galleryImages .image5 {
+.galleryImages .image5 {
 	margin-left: 59vw;
 	width: 35%;
 	margin-top: -90px;
 }
 
-#gallery .galleryImages .image6 {
+.galleryImages .image6 {
 	margin-left: 10vw;
 	width: 48%;
 	margin-top: -35px;
 }
 
 
+/* Footer */
+
+.footerTitle {
+	margin-top: 1rem;
+	font-size: 3rem;
+}
+
+.footerLinks {
+	margin-top: -3.6rem;
+	font-size: .85rem;
+	margin-left: 78%;
+}
+
+.footerRights {
+	font-size: .55rem;
+	margin-top: -.85rem;
+}
+
 /* Large devices (desktops, 992px and up) */
 
 @media (min-width: 992px) {
 
 }
-
-
 /* Extra large devices (large desktops, 1200px and up) */
 
 @media (min-width: 1200px) {
 }
 
-}
 	
