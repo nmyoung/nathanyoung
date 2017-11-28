@@ -5,9 +5,9 @@
 	padding: 0;
 	border: 0;
 	vertical-align: baseline;
-	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html {
@@ -18,7 +18,7 @@ html {
 body {
 	width: 100%;
 	background-color: #141415;
-	transition: background-color 0.5s linear;
+	transition: background-color .5s linear;
 	font-family: 'Arimo', 'sans-serif';
 	font-weight: 400;
 	font-size: 1rem;
@@ -29,12 +29,12 @@ body {
 }
 
 ul {
-    list-style: none;
+	list-style: none;
 }
 
 img {
 	filter: grayscale(100%);
-    transition: filter 300ms; 
+	transition: filter 300ms; 
 }
 
 img:hover, img:active {
@@ -67,7 +67,6 @@ img:hover, img:active {
 	user-select: none;     
 }
 
-
 /* Site Header */
 
 #site-header {
@@ -80,77 +79,75 @@ img:hover, img:active {
 	text-transform: uppercase;
 	top: 0;
 	z-index: 1000;
-
 }
 
-#site-header .bnwBar {
-	padding: .70rem 0 .70rem 0;
+.bnwBar {
 	float: left;
 	margin-left: 7vw;
+	padding: .70rem 0 .70rem 0;
 }
 
-#site-header .menuOuter {
-	padding: .70rem 0 .70rem 0;
+.menuOuter {
 	float: right;
-	width: 50vw;
+	width: 50%;
 	background-color: #eaeaea;
+	padding: .70rem 0 .70rem 0;
 	cursor: pointer;
 }
 
-#site-header .menuOuter .menu {
+.menu {
+	background-color: #eaeaea;
 	text-align: right;
 	margin-right: 7vw;
-	background-color: #eaeaea;
 }
 
-#site-header .bnwBar .bnwContent .bnw .wide {
+.bnw .wide {
 	display: none;
 }
 
-#site-header .bnwBar .bnwContent .bnw div a {
+.bnw div a {
 	text-decoration: none;
 	color: #eaeaea;
 }
 
-#site-header .navBar {
+.navBar {
 	display: none;
-	background: #eaeaea;
-	padding: 0;
-	margin: 0;
 	width: 100%;
+	background: #eaeaea;
+	margin: 0;
+	padding: 0;
 	border-bottom: none;
 }
 
-
-#site-header .navBar .navContent {
+.navContent {
 	margin: 0 4px;
 	padding: .48rem 0 calc(.57rem - 3px) 0;
 }
 
-#site-header .navBar .navContent ul {
-	margin: 0;
+.navContent ul {
 	display: block;
-	margin: auto;
 	text-align: center;
+	margin: auto;
 }
 
-#site-header .navBar .navContent ul li {
+.navContent ul li {
 	display: inline-block;
 	padding-right: 4vw;
 }
 
-#site-header .navBar .navContent ul li:last-child {
-	padding-right: 0px;
+.navContent ul li:last-child {
+	padding-right: 0;
 }
 
-#site-header .navBar .navContent .nav li a{
+.navContent ul li a:hover,
+.navContent ul li a:active {
+	border-bottom: 1.25px solid #141415;
+	padding-bottom: .75px;
+}
+
+.nav li a{
 	text-decoration: none;
 	color: #141415;
-}
-
-#site-header .navBar .navContent ul li a:hover,
-#site-header .navBar .navContent ul li a:active {
-	border-bottom: 1.25px solid #141415;
 }
 
 
@@ -162,29 +159,28 @@ img:hover, img:active {
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat; 
-	background-attachment: absolute;
 	border-bottom: 3px solid #eaeaea;
 	color: #eaeaea;
 }
 
 
-#cover-pic .coverCenter {
+.coverCenter {
 	position: relative;
 	top: 45%;
 	-webkit-transform: translateY(-50%);
 			transform: translateY(-50%);
 }
 
-#cover-pic .coverCenter .coverLogo {
+.coverLogo {
+	width: 100%;
 	position: relative;
 	-webkit-perspective: 1000px;
 			perspective: 1000px;
-	padding: 10vh 5vw 10vh 5vw;
-	width: 100%;
+	padding: 10% 5% 10% 5%;
 	text-transform: uppercase;
 }
 
-#cover-pic .coverCenter .coverLogo .bnwLogo {
+.bnwLogo {
 	width: 100%;
 	height: 100%;
 	text-align: center;
@@ -195,16 +191,16 @@ img:hover, img:active {
 			animation: rotation 13s linear infinite;
 }
   
-#cover-pic .bnwLogo > h1 {
-	position: absolute;
-	font-size: 8.4vw;
+.bnwLogo h1 {
 	width: 100%;
 	height: 100%;
+	position: absolute;
+	font-size: 8.4vw;
 	-webkit-backface-visibility: hidden;
 			backface-visibility: hidden; 
 }
 
-#cover-pic .coverCenter .coverLogo .bnwLogo .bnwText {
+.bnwText {
 	text-transform: uppercase;
 	line-height: 1;
 	color: #E2E2E2;
@@ -212,14 +208,14 @@ img:hover, img:active {
 	margin: 0;
 }
 
-#cover-pic .bnwLogo .back {
+.back {
 	display: block;
 	-webkit-transform: rotateY(360deg);
 			transform: rotateY(180deg);
 	box-sizing: border-box;
 }
 
-#cover-pic .bnwText::after {
+.bnwText::after {
 	display: none; 
 }
 
@@ -249,14 +245,14 @@ img:hover, img:active {
 			transform: rotateY(360deg); } 
 }
 
-#cover-pic .coverInfo {
-	margin: auto;
-	text-align: center;
+.coverInfo {
 	max-width: 60%;
+	text-align: center;
+	margin: auto;
 	padding-top: calc(49vh + 2vw);
 }
 
-#cover-pic .coverInfo h3 {
+.coverInfo h3 {
 	font-size: .94rem;
 }
 
@@ -268,109 +264,100 @@ img:hover, img:active {
 	margin-bottom: 80px;
 }
 
-#about .aboutTitle {
+.aboutTitle {
 	width: 100%;
-	margin-top: 80px;
+	margin-top: 65px;
 }
 
-#about .aboutTitle h2 {
-	height: 100%;
+.aboutTitle h2 {
 	text-align: center;
 	margin: auto;
 }
 
-#about .aboutBody {
-	width: 100%;
-	margin-top: 0;
-	padding-bottom: 0;
-}
-
-#about .aboutBody h3 {
+.aboutBody h3 {
 	font-size: .6rem;
 	text-transform: uppercase;
-	margin-top: 20px;
-	margin-bottom: 7px;
-	margin-left: 14.5vw;
+	margin: 20px 0 7px 14.5vw;
 }
 
-#about .aboutBody p {
-	font-size: .85rem;
+.aboutBody p {
 	width: 65%;
+	font-size: .85rem;
 	margin: auto;
 	padding-top: 8px;
 }
 
-#about .aboutBody .aboutImages {
+.aboutImages {
+	margin: 3rem 0 100px 0;
 	padding-right: 6.1%;
-	margin-top: 100px;
-	margin-bottom: 100px;
-	height: auto;
 }
 
-#about .aboutBody .aboutImages figure .aboutImage1 {
-	margin-left: 6vw;
+.aboutImage1 {
 	width: 60%;
+	margin-left: 6vw;
 	margin-bottom: 40px;
 }
 
-#about .aboutBody .aboutImages figure .aboutImage2 {
-	margin-left: 37.8vw;
-	margin-bottom: -.5rem;
+.aboutImage2 {
 	width: 60%;
+	margin-left: 37.8vw;
+	margin-bottom: -2.25rem;;
 }
 
-#about .aboutBody .aboutImages figure figcaption {
+figcaption {
 	font-size: .6rem;
 }
 
-#about .aboutBody .aboutImages figure .fig1 {
+.caption1 {
 	position: relative;
-	margin-left: calc(5.9vw + .5rem);
-	margin-top: -25px;
+	margin: -28px 0 40px calc(5.9vw + .5rem);
 }
 
-#about .aboutBody .aboutImages figure .fig2 {
+.caption2 {
 	transform: rotate(-90deg);
-	position: absolute;
 	transform-origin: top left;
+	position: absolute;
 	margin-left: calc(38vw - 1.25rem);
+	margin-top: 2rem;
 }
 
-#about .aboutBody .aboutLinks {
+#map {
+	display: none;
+}
+
+.aboutLinks {
 	margin-top: 2.25rem;
 }
 
-#about .aboutBody .aboutLinks p {
+.aboutLinks p {
 	font-size: .55rem;
 	margin-top: -5px;
 	margin-bottom: 10px;
 	border-top: 3px solid #eaeaea;
 }
 
-#about .aboutBody .aboutLinks .lower {
+.lower {
 	padding-bottom: 5px;
 	border-bottom: 3px solid #eaeaea;
 }
 
-#about .aboutBody .aboutLinks p a {
+.aboutLinks p a {
 	color: #eaeaea;
 	text-decoration: none;
 	margin-left: .8vw;
 }
 
-#about .aboutBody .aboutLinks p a:hover,
-#about .aboutBody .aboutLinks p a:active {
+.aboutLinks p a:hover,
+.aboutLinks p a:active {
+	padding-bottom: 1px;
 	border-bottom: 1.25px solid #eaeaea;
 }
 
-#about .aboutBody .aboutLinks img {
+.aboutLinks img {
+	height: 1.3rem;
+	width: 1.3rem;
 	padding-left: .4rem;
-	height: 1.5rem;
-	width: 1.5rem;
-	margin-left: 0;
-	margin-bottom: 0;
-	padding-right: 0;
-
+	padding-bottom: 2px;
 }
 
 
@@ -378,71 +365,69 @@ img:hover, img:active {
 
 #program {
 	height: 100%;
+	margin-top: -83px;
 }
 
-#program .programTitle {
+.programTitle {
 	width: 100%;
-	margin-top: 80px;
+	margin-top: 65px;
 }
 
-#program .programTitle h2 {
-	height: 100%;
+.programTitle h2 {
 	text-align: center;
 	margin: auto;
 }
 
-#program .programDates {
+.programDates {
 	margin-left: 14.5vw;
 }
 
-#program .programDates h3 {
+.programDates h3 {
 	display: inline-block;
 	font-size: .6rem;
 	text-transform: uppercase;
 	margin-top: 20px;
 	margin-bottom: 7px;
 	padding-right: 1rem;
-	text-align: left;
 	color: #969696;
 	cursor: pointer;
 }
 
-#program .programDates .h3Active {
+.programDates .h3Active {
 	color: #eaeaea;
 }
 
-#program .programTimes {
+.programTimes {
+	display: none;
 	width: 100%;
 	font-size: .55rem;
 	margin-top: 25px;
-	display: none;
 }
 
-#program .activeTimes {
+.activeTimes {
 	display: inline-block;
 }
 
-#program .programTimes p {
-	font-size: .72rem;
+.programTimes p {
 	width: 65%;
-	margin: auto;
-	margin-bottom: 13px;
 	position: relative;
+	font-size: .72rem;
+	margin: auto auto 13px auto;
 	padding-left: .8vw;
 	padding-bottom: 15px;
 	border-bottom: 3px solid #eaeaea;
 }
 
-#program .programTimes p:first-child {
-	border-top: 3px solid #eaeaea;
+.programTimes p:first-child {
 	padding-top: 15px;
+	border-top: 3px solid #eaeaea;
 }
 
-#program .programTimes p span {
-	padding-left: 14vw;
-	position: absolute;
+.programTimes p span {
 	display: block;
-	margin-top: -1.07rem;
+	position: absolute;
+	margin-top: -1.1rem;
+	padding-left: 16vw;
 }
 
 
@@ -457,63 +442,55 @@ img:hover, img:active {
 
 #faq {
 	height: 100%;
+	margin-top: 50px;
 }
 
-#faq .faqTitle {
+.faqTitle {
 	width: 100%;
-	margin-top: 80px;
+	margin-top: 65px;
 }
 
-#faq .faqTitle h2 {
-	height: 100%;
+.faqTitle h2 {
 	text-align: center;
 	margin: auto;
 }
 
-#faq .faqBody {
-	width: 100%;
-	margin-top: 0;
-}
-
-#faq .faqBody .h3Active {
+.faqBody .h3Active {
 	color: #eaeaea;
 }
 
-#faq .faqBody h3 {
-	font-size: .6rem;
+.faqBody h3 {
 	max-width: 60%;
+	font-size: .6rem;
 	text-transform: uppercase;
-	margin-top: 20px;
-	margin-bottom: 2rem;
-	margin-left: 14.5vw;
+	margin: 20px 0 2rem 14.5vw;
 	color: #969696;
 	cursor: pointer;
 }
 
-#faq .faqBody p {
-	font-size: .85rem;
+.faqBody p {
 	width: 60%;
-	margin-left: 20%;
-	margin-top: calc(-2rem + 5px);
-	margin-bottom: 50px;
+	height: 1rem;
+	font-size: .85rem;
+	margin: calc(-2rem + 5px) 0 50px 20%;
 	padding-top: 8px;
 	visibility: hidden;
-	height: 1rem;
 }
 
-#faq .faqBody .pActive {
+.faqBody .pActive {
 	visibility: visible;
 	height: auto;
 }
 
-#faq .faqBody p a {
+.faqBody p a {
 	color: #eaeaea;
 	text-decoration: none;
 }
 
-#faq .faqBody p a:hover,
-#faq .faqBody p a:active {
+.faqBody p a:hover,
+.faqBody p a:active {
 	border-bottom: 1.25px solid #eaeaea;
+	padding-bottom: 1px;
 }
 
 
@@ -523,83 +500,78 @@ img:hover, img:active {
 	height: 100%;
 }
 
-#tickets .ticketsTitle {
+.ticketsTitle {
 	width: 100%;
-	margin-top: 80px;
+	margin-top: 65px;
 }
 
 #tickets h2 {
-	height: 100%;
 	text-align: center;
 	margin: auto;
 }
 
-#tickets .ticketsBody {
+.ticketsBody {
 	width: 100%;
-	margin-top: 0;
 	padding-bottom: 2rem;
 }
 
-#tickets h3 {
+.ticketsBody h3 {
 	font-size: .6rem;
 	text-transform: uppercase;
 	margin-top: 20px;
 	margin-left: 14.5vw;
 }
 
-#tickets p {
+.ticketsBody p {
 	font-size: .85rem;
 	width: 65%;
 	margin: auto;
-	margin-bottom: 2rem;
 }
 
-#tickets .ticketsPrices {
+.ticketsPrices {
 	text-transform: uppercase;
-	width: 100%;
 	margin-bottom: 30px;
 }
 
-#tickets .ticketsPrices p {
-	margin-bottom: 0;
-}
-
-#tickets .ticketsPrices span {
-	padding-left: 14vw;
+.ticketsPrices span {
 	position: absolute;
 	display: block;
 	margin-top: -1.28rem;
+	padding-left: 14vw;
 }
 
 .ticketsEmail {
 	font-size: .55rem;
-	margin-left: 17.6%;
-	padding-top: 15px;
-	margin-bottom: 30px;
+	margin: 0 15px 15px 17.6%;
 }
 
 .ticketsEmail a {
-	text-decoration: none;
 	color: #eaeaea;
+	text-decoration: none;
 }
 
 .ticketsEmail a:hover,
 .ticketsEmail a:active {
 	border-bottom: 1.25px solid #eaeaea;
+	padding-bottom: .75px;
 }
 
 .ticketsText {
 	padding-top: 15px;
 }
 
+.ticketsText p {
+	margin-bottom: 1.8rem;
+}
+
 .ticketsText button {
-	margin-left: 17.6%;
 	background-color: #eaeaea;
-	padding: .35rem 1.2rem;
-	text-transform: uppercase;
 	font-size: .75rem;
-	color: #413932;
+	text-transform: uppercase;
 	text-decoration: none;
+	color: #1e3141;
+	margin-left: 17.6%;
+	padding: .35rem 1.2rem;
 	cursor: pointer;
 }
 
@@ -608,22 +580,22 @@ img:hover, img:active {
 
 footer {
 	height: 100%;
-	margin-top: 1.9rem;
-	border-top: 3px solid #eaeaea;
 	background-color: #141415;
+	border-top: 3px solid #eaeaea;
 	text-transform: uppercase;
-	padding-bottom: 1.7rem;
+	margin-top: 1.5rem;
+	padding-bottom: 1.3rem;
 }
 
 .footerTitle {
-	margin-top: 1rem;
+	font-size: 2.77rem;
+	margin-top: .5rem;
 	margin-left: 7%;
-	font-size: 2.5rem;
 }
 
 .footerLinks {
-	margin-top: -3rem;
-	font-size: .6rem;
+	font-size: .55rem;
+	margin-top: -3.35rem;
 	margin-left: 75%;
 }
 
@@ -633,35 +605,15 @@ footer {
 }
 
 .footerLinks a:hover,
-.ticketsEmail a:active {
+.footerLinks a:active {
 	border-bottom: 1.25px solid #eaeaea;
+	padding-bottom: 1px;
 }
 
 .footerRights {
-	margin-left: 7%;
 	font-size: .44rem;
-	margin-top: -.55rem;
-}
-
-
-/* Landscape phones */
-
-@media (min-width: 576px) {
-
-#footer .footerTitle {
-	font-size: 2.8rem;
-}
-
-#footer .footerLinks {
-	margin-left: 76%;
-	font-size: 1rem;
-}
-
-.footerRights {
-	font-size: .5rem;
-	margin-top: -.15rem;
-}
-
+	margin-top: -.6rem;
+	margin-left: 7.5%;
 }
 
 
@@ -670,181 +622,246 @@ footer {
 @media (min-width: 768px) {
 
 #site-header {
-	font-size: 24px;
 	height: auto;
+	font-size: 24px;
 }
 
-#site-header .menuOuter {
+.menuOuter {
 	display: none;
 }
 
-#site-header .bnwBar {
-	padding: 11px 0;
+.bnwBar {
 	float: none;
+	padding: 11px 0;
 	margin-left: 0;
 }
 
-#site-header .bnwBar .bnwContent {
-	margin: auto;
+.bnwContent {
 	text-align: center;
+	margin: auto;
 }
 
-#site-header .bnwBar .bnwContent .bnw .wide {
+.bnw .wide {
 	display: block;
 }
 
-#site-header .bnwBar .bnwContent .bnw .thin {
+.bnw .thin {
 	display: none;
 }
 
-#site-header .navBar {
+.navBar {
 	display: inline-block;
 }
 
-#site-header .navBar .navContent {
+.navContent {
 	margin: 0 100px;
 	padding: 6px 0;
 }
 
-#site-header .navBar .navContent ul li {
+.navContent ul li {
 	padding-right: 60px;
 }
 
 
 /* Cover Picture */
 
-#cover-pic .coverCenter {
+.coverCenter {
 	top: 47%;
 }
+
 @media (min-width: 1000px) {
-	#cover-pic .coverCenter {
+	.coverCenter {
 		top: 44%;
 	}
 }
 @media (min-width: 1200px) {
-	#cover-pic .coverCenter {
+	.coverCenter {
 		top: 42%;
 	}
 }
 @media (min-height: 750px) {
-	#cover-pic .coverCenter {
+	.coverCenter {
 		top: 42%;
 	}
 }
 @media (min-height: 900px) {
-	#cover-pic .coverCenter {
+	.coverCenter {
 		top: 41%;
 	}
 }
 
-#cover-pic .coverCenter .coverLogo {
+.coverLogo {
 	padding: 10vh 10vw 10vh 10vw;
 }
   
-#cover-pic .bnwLogo > h1 {
+.bnwLogo h1 {
 	font-size: 7.75vw;
 }
 @media (min-width: 1000px) {
-	#cover-pic .bnwLogo > h1 {
+	.bnwLogo h1 {
 		font-size: 7.5vw;
 	}
 }
 
-#cover-pic .coverInfo {
+.coverInfo {
 	max-width: 58%;
 	padding-top: calc(50vh + 3vw);
 }
 @media (min-height: 750px) {
-	#cover-pic .coverInfo {
+	.coverInfo {
 		padding-top: 55vh;
 	}
 }
 
-#cover-pic .coverInfo h3 {
+.coverInfo h3 {
 	font-size: 1rem;
+}
+
+
+/* About */
+
+.aboutTitle {
+	margin-top: 80px;
+}
+
+.aboutImages {
+	margin-top: 100px;
+}
+
+.aboutImage2 {
+	margin-bottom: -.5rem;
+}
+
+.caption1 {
+	margin-bottom: 0;
+}
+
+.caption2 {
+	margin-top: 0;
+}
+
+#map {
+	display: block;
+	margin: 1.75rem auto auto auto;
+	width: 65%;
+	height: 13rem;
+	border: none;
+}
+
+.aboutLinks img {
+	height: 1.5rem;
+	width: 1.5rem;
+	padding-bottom: 1px;
 }
 
 
 /* Program */
 
-#program .programDates {
+.programTitle {
+	margin-top: 80px;
+}
+
+.programDates {
 	margin-left: 14.2vw;
 }
 
+.programTimes p span {
+	padding-left: 14vw;
+}
 
 /* Gallery */
 
 .galleryImages {
 	display: block;
+	margin-top: 125px;
 	padding-right: 6.1%;
-	margin-top: 100px;
 	padding-bottom: 50px;
 	height: auto;
-	position: relative;
 }
 
-.galleryImages .image1 {
-	margin-left: 50vw;
+.image1 {
 	width: 48%;
+	margin-left: 50vw;
 }
 
-.galleryImages .image2 {
-	margin-left: 5.3vw;
+.image2 {
 	width: 30%;
 	margin-top: -30px;
+	margin-left: 5.3vw;
 }
 
-.galleryImages .image3 {
-	margin-left: 41.5vw;
+.image3 {
 	width: 46%;
 	margin-top: -48px;
+	margin-left: 41.5vw;
 }
 
-.galleryImages .image4 {
-	margin-left: 18vw;
+.image4 {
 	width: 25%;
 	margin-top: 90px;
+	margin-left: 18vw;
 }
 
-.galleryImages .image5 {
-	margin-left: 59vw;
+.image5 {
 	width: 35%;
 	margin-top: -90px;
+	margin-left: 59vw;
 }
 
-.galleryImages .image6 {
-	margin-left: 10vw;
+.image6 {
 	width: 48%;
 	margin-top: -35px;
+	margin-left: 10vw;
+}
+
+
+/* FAQ */
+
+#faq {
+	margin-top: 0;
+}
+
+.faqTitle {
+	width: 100%;
+	margin-top: 80px;
+}
+
+
+/* Tickets */
+
+#tickets {
+	margin-top: 5px;
+}
+
+.ticketsTitle {
+	margin-top: 80px;
+}
+
+.ticketsEmail {
+	margin-bottom: 30px;
+	padding-top: 15px;
 }
 
 
 /* Footer */
 
+footer {
+	padding-bottom: 1.8rem;
+}
+
 .footerTitle {
-	margin-top: 1rem;
-	font-size: 3rem;
+	font-size: 3.6rem;
+	margin-top: .9rem;
 }
 
 .footerLinks {
-	margin-top: -3.6rem;
-	font-size: .85rem;
+	font-size: .75rem;
+	margin-top: -4.4rem;
 	margin-left: 78%;
 }
 
 .footerRights {
 	font-size: .55rem;
-	margin-top: -.85rem;
+	margin-top: -.86rem;
+	margin-left: 7.5%;
 }
-
-/* Large devices (desktops, 992px and up) */
-
-@media (min-width: 992px) {
-
-}
-/* Extra large devices (large desktops, 1200px and up) */
-
-@media (min-width: 1200px) {
-}
-
-	
